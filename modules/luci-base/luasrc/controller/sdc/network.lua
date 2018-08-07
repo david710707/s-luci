@@ -42,9 +42,9 @@ function index()
 			page = entry({"sdc", "network", "wireless_shutdown"}, call("wifi_shutdown"), nil)
 			page.leaf = true
 
-			page = entry({"sdc", "network", "wireless"}, arcombine(template("sdc_network/wifi_overview"), cbi("sdc_network/wifi")), _("Wifi"), 15)
-			page.leaf = true
-			page.subindex = true
+			--page = entry({"sdc", "network", "wireless"}, arcombine(template("sdc_network/wifi_overview"), cbi("sdc_network/wifi")), _("Wifi"), 15)
+			--page.leaf = true
+			--page.subindex = true
 		end
 
 
