@@ -122,11 +122,39 @@ function o.parse(self, section, novld)
 end
 
 function o.cfgvalue(self, section)
-	return luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpServer1 --UnLock"):sub(1,-2)
+    local r1
+    local r2
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClient2Server1") ~= nil then
+            r1 = string.gsub(token, "NtpClient2Server1 ", "")
+        end
+    end
+
+    r2 = luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpServer1 --UnLock"):sub(1,-2)
+
+    if r1 ~= r2 then
+    local  cmd = ""
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer1 %s --UnLock", r1)
+        luci.sys.exec(cmd)
+    end
+
+    return r1
 end
 
 function o.write(self, section, value)
-	local  cmd = ""
+    local  v = ""
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClient2Server1") ~= nil then
+            v = string.format("%sNtpClient2Server1 %s\n", v, value)
+        else
+            v = string.format("%s%s\n", v, token)
+        end
+    end
+    fs.writefile("/SDC/Clock.conf", v)
+
+    local  cmd = ""
         cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer1 %s --UnLock", value)
         luci.sys.exec(cmd)
 end
@@ -229,11 +257,39 @@ function o.parse(self, section, novld)
 end
 
 function o.cfgvalue(self, section)
-	return luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpServer2 --UnLock"):sub(1,-2)
+    local r1
+    local r2
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClient2Server2") ~= nil then
+            r1 = string.gsub(token, "NtpClient2Server2 ", "")
+        end
+    end
+
+    r2 = luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpServer2 --UnLock"):sub(1,-2)
+
+    if r1 ~= r2 then
+    local  cmd = ""
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer2 %s --UnLock", r1)
+        luci.sys.exec(cmd)
+    end
+
+    return r1
 end
 
 function o.write(self, section, value)
-	local  cmd = ""
+    local  v = ""
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClient2Server2") ~= nil then
+            v = string.format("%sNtpClient2Server2 %s\n", v, value)
+        else
+            v = string.format("%s%s\n", v, token)
+        end
+    end
+    fs.writefile("/SDC/Clock.conf", v)
+
+    local  cmd = ""
         cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer2 %s --UnLock", value)
         luci.sys.exec(cmd)
 end
@@ -336,11 +392,39 @@ function o.parse(self, section, novld)
 end
 
 function o.cfgvalue(self, section)
-	return luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpServer3 --UnLock"):sub(1,-2)
+    local r1
+    local r2
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClient2Server3") ~= nil then
+            r1 = string.gsub(token, "NtpClient2Server3 ", "")
+        end
+    end
+
+    r2 = luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpServer3 --UnLock"):sub(1,-2)
+
+    if r1 ~= r2 then
+    local  cmd = ""
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer3 %s --UnLock", r1)
+        luci.sys.exec(cmd)
+    end
+
+    return r1
 end
 
 function o.write(self, section, value)
-	local  cmd = ""
+    local  v = ""
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClient2Server3") ~= nil then
+            v = string.format("%sNtpClient2Server3 %s\n", v, value)
+        else
+            v = string.format("%s%s\n", v, token)
+        end
+    end
+    fs.writefile("/SDC/Clock.conf", v)
+
+    local  cmd = ""
         cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer3 %s --UnLock", value)
         luci.sys.exec(cmd)
 end
@@ -443,11 +527,39 @@ function o.parse(self, section, novld)
 end
 
 function o.cfgvalue(self, section)
-	return luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpServer4 --UnLock"):sub(1,-2)
+    local r1
+    local r2
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClient2Server4") ~= nil then
+            r1 = string.gsub(token, "NtpClient2Server4 ", "")
+        end
+    end
+
+    r2 = luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpServer4 --UnLock"):sub(1,-2)
+
+    if r1 ~= r2 then
+    local  cmd = ""
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer4 %s --UnLock", r1)
+        luci.sys.exec(cmd)
+    end
+
+    return r1
 end
 
 function o.write(self, section, value)
-	local  cmd = ""
+    local  v = ""
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClient2Server4") ~= nil then
+            v = string.format("%sNtpClient2Server4 %s\n", v, value)
+        else
+            v = string.format("%s%s\n", v, token)
+        end
+    end
+    fs.writefile("/SDC/Clock.conf", v)
+
+    local  cmd = ""
         cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer4 %s --UnLock", value)
         luci.sys.exec(cmd)
 end
@@ -550,11 +662,39 @@ function o.parse(self, section, novld)
 end
 
 function o.cfgvalue(self, section)
-	return luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpServer5 --UnLock"):sub(1,-2)
+    local r1
+    local r2
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClient2Server5") ~= nil then
+            r1 = string.gsub(token, "NtpClient2Server5 ", "")
+        end
+    end
+
+    r2 = luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpServer5 --UnLock"):sub(1,-2)
+
+    if r1 ~= r2 then
+    local  cmd = ""
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer5 %s --UnLock", r1)
+        luci.sys.exec(cmd)
+    end
+
+    return r1
 end
 
 function o.write(self, section, value)
-	local  cmd = ""
+    local  v = ""
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClient2Server5") ~= nil then
+            v = string.format("%sNtpClient2Server5 %s\n", v, value)
+        else
+            v = string.format("%s%s\n", v, token)
+        end
+    end
+    fs.writefile("/SDC/Clock.conf", v)
+
+    local  cmd = ""
         cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer5 %s --UnLock", value)
         luci.sys.exec(cmd)
 end
@@ -563,11 +703,39 @@ o = s:option(Value, "ntpclientinterval", translate("Interval (sec)"))
 o.datatype = "string"
 
 function o.cfgvalue(self, section)
-	return luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpInterval --UnLock"):sub(1,-2)
+    local r1
+    local r2
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClientInterval") ~= nil then
+            r1 = string.gsub(token, "NtpClientInterval ", "")
+        end
+    end
+
+    r2 = luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpInterval --UnLock"):sub(1,-2)
+
+    if r1 ~= r2 then
+    local  cmd = ""
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpInterval %s --UnLock", r1)
+        luci.sys.exec(cmd)
+    end
+
+    return r1
 end
 
 function o.write(self, section, value)
-	local  cmd = ""
+    local  v = ""
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClientInterval") ~= nil then
+            v = string.format("%sNtpClientInterval %s\n", v, value)
+        else
+            v = string.format("%s%s\n", v, token)
+        end
+    end
+    fs.writefile("/SDC/Clock.conf", v)
+
+    local  cmd = ""
         cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpInterval %s --UnLock", value)
         luci.sys.exec(cmd)
 end
@@ -576,11 +744,39 @@ o = s:option(Value, "ntpclienttimeout", translate("Timeout (sec)"))
 o.datatype = "string"
 
 function o.cfgvalue(self, section)
-	return luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpTimeout --UnLock"):sub(1,-2)
+    local r1
+    local r2
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClientTimeout") ~= nil then
+            r1 = string.gsub(token, "NtpClientTimeout ", "")
+        end
+    end
+
+    r2 = luci.sys.exec("/SDC/ClockService --Lock --GetstsChClkTimeNtpTimeout --UnLock"):sub(1,-2)
+
+    if r1 ~= r2 then
+    local  cmd = ""
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpTimeout %s --UnLock", r1)
+        luci.sys.exec(cmd)
+    end
+
+    return r1
 end
 
 function o.write(self, section, value)
-	local  cmd = ""
+    local  v = ""
+
+    for token in string.gmatch(fs.readfile("/SDC/Clock.conf"), "[^\r\n]+") do
+        if string.find(token, "NtpClientTimeout") ~= nil then
+            v = string.format("%sNtpClientTimeout %s\n", v, value)
+        else
+            v = string.format("%s%s\n", v, token)
+        end
+    end
+    fs.writefile("/SDC/Clock.conf", v)
+
+    local  cmd = ""
         cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpTimeout %s --UnLock", value)
         luci.sys.exec(cmd)
 end
