@@ -142,6 +142,8 @@ function o.write(self, section, value)
 	end
 
 	fs.writefile("/sysconf/net-snmp/snmp/snmpd.conf", v)
+
+	luci.sys.exec("/SDC/restartSNMPD.sh")
 end
 
 o = s:option(Value, "syscontact", translate("Contact"))
@@ -262,6 +264,8 @@ function o.write(self, section, value)
 	end
 
 	fs.writefile("/sysconf/net-snmp/snmp/snmpd.conf", v)
+
+	luci.sys.exec("/SDC/restartSNMPD.sh")
 end
 
 o = s:option(Value, "snmpServer1", translate("SNMP Server 1"))
@@ -385,6 +389,8 @@ function o.write(self, section, value)
 	end
 
 	fs.writefile("/sysconf/net-snmp/snmp/snmpd.conf", v)
+
+	luci.sys.exec("/SDC/restartSNMPD.sh")
 end
 
 o = s:option(Value, "snmpServer1Community", translate("SNMP Server 1 Community"))
@@ -507,6 +513,8 @@ function o.write(self, section, value)
 	end
 
 	fs.writefile("/sysconf/net-snmp/snmp/snmpd.conf", v)
+
+	luci.sys.exec("/SDC/restartSNMPD.sh")
 end
 
 o = s:option(Value, "snmpServer2", translate("SNMP Server 2"))
@@ -630,6 +638,8 @@ function o.write(self, section, value)
 	end
 
 	fs.writefile("/sysconf/net-snmp/snmp/snmpd.conf", v)
+
+	luci.sys.exec("/SDC/restartSNMPD.sh")
 end
 
 o = s:option(Value, "snmpServer2Community", translate("SNMP Server 2 Community"))
@@ -752,6 +762,8 @@ function o.write(self, section, value)
 	end
 
 	fs.writefile("/sysconf/net-snmp/snmp/snmpd.conf", v)
+
+	luci.sys.exec("/SDC/restartSNMPD.sh")
 end
 
 o = s:option(Value, "snmpServer3", translate("SNMP Server 3"))
@@ -875,6 +887,8 @@ function o.write(self, section, value)
 	end
 
 	fs.writefile("/sysconf/net-snmp/snmp/snmpd.conf", v)
+
+	luci.sys.exec("/SDC/restartSNMPD.sh")
 end
 
 o = s:option(Value, "snmpServer3Community", translate("SNMP Server 3 Community"))
@@ -997,6 +1011,8 @@ function o.write(self, section, value)
 	end
 
 	fs.writefile("/sysconf/net-snmp/snmp/snmpd.conf", v)
+
+	luci.sys.exec("/SDC/restartSNMPD.sh")
 end
 
 o = s:option(Value, "snmpServer4", translate("SNMP Server 4"))
@@ -1120,6 +1136,8 @@ function o.write(self, section, value)
 	end
 
 	fs.writefile("/sysconf/net-snmp/snmp/snmpd.conf", v)
+
+	luci.sys.exec("/SDC/restartSNMPD.sh")
 end
 
 o = s:option(Value, "snmpServer4Community", translate("SNMP Server 4 Community"))
@@ -1242,6 +1260,8 @@ function o.write(self, section, value)
 	end
 
 	fs.writefile("/sysconf/net-snmp/snmp/snmpd.conf", v)
+
+	luci.sys.exec("/SDC/restartSNMPD.sh")
 end
 
 o = s:option(Value, "snmpServer5", translate("SNMP Server 5"))
@@ -1365,6 +1385,8 @@ function o.write(self, section, value)
 	end
 
 	fs.writefile("/sysconf/net-snmp/snmp/snmpd.conf", v)
+
+	luci.sys.exec("/SDC/restartSNMPD.sh")
 end
 
 o = s:option(Value, "snmpServer5Community", translate("SNMP Server 5 Community"))
@@ -1487,6 +1509,8 @@ function o.write(self, section, value)
 	end
 
 	fs.writefile("/sysconf/net-snmp/snmp/snmpd.conf", v)
+
+	luci.sys.exec("/SDC/restartSNMPD.sh")
 end
 
 ---------------------------------------------------------------------------------
