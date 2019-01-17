@@ -52,10 +52,36 @@
                     e.innerHTML = info.timezone;
 
             if (e = document.getElementById('brightness'))
-                    e.innerHTML = info.brightness;
+		{
+			if (info.brightness == "1\n")
+				e.innerHTML = "Dim(Auto)";
+			else if (info.brightness == "2\n")
+				e.innerHTML = "Normal(Auto)";
+			else if (info.brightness == "3\n")
+                                e.innerHTML = "Bright(Auto)";
+			else if (info.brightness == "4\n")
+                                e.innerHTML = "Very Bright(Auto)";
+			else if (info.brightness == "11\n")
+                                e.innerHTML = "Dim(PC)";
+                        else if (info.brightness == "12\n")
+                                e.innerHTML = "Normal(PC)";
+                        else if (info.brightness == "13\n")
+                                e.innerHTML = "Bright(PC)";
+                        else if (info.brightness == "14\n")
+                                e.innerHTML = "Very Bright(PC)";
+			else
+				e.innerHTML = "error";
+		}
 
             if (e = document.getElementById('displayformat'))
-                    e.innerHTML = info.displayformat;
+		{
+			if (info.displayformat == "1\n")
+	                    e.innerHTML = "12H";
+			else if (info.displayformat == "2\n")
+				e.innerHTML = "24H";
+			else
+				e.innerHTML = "error";
+		}
 
             if (e = document.getElementById('updateDateTime'))
                     e.innerHTML = info.updateDateTime;
@@ -70,9 +96,9 @@
 
 	<table width="100%" cellspacing="10">
 		<tr><td width="33%"><%:Sync Status%></td><td id="syncstatus">-</td></tr>
-		<!--<tr><td width="33%"><%:TimeZone%></td><td id="timezone">-</td></tr>
+		<tr><td width="33%"><%:TimeZone%></td><td id="timezone">-</td></tr>
 		<tr><td width="33%"><%:Brightness%></td><td id="brightness">-</td></tr>
-		<tr><td width="33%"><%:Display Format%></td><td id="displayformat">-</td></tr>-->
+		<tr><td width="33%"><%:Display Format%></td><td id="displayformat">-</td></tr>
 		<tr><td width="33%"><%:Update Date Time%></td><td id="updateDateTime">-</td></tr>
 	</table>
 </fieldset>
