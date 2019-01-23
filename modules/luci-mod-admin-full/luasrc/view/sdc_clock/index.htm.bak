@@ -53,16 +53,22 @@
 
             if (e = document.getElementById('brightness'))
 		{
-			if (info.brightness == "0\n")
-				e.innerHTML = "Auto";
-			else if (info.brightness == "1\n")
-				e.innerHTML = "Dim";
+			if (info.brightness == "1\n")
+				e.innerHTML = "Dim(Auto)";
 			else if (info.brightness == "2\n")
-				e.innerHTML = "Normal";
+				e.innerHTML = "Normal(Auto)";
 			else if (info.brightness == "3\n")
-                                e.innerHTML = "Bright";
+                                e.innerHTML = "Bright(Auto)";
 			else if (info.brightness == "4\n")
-                                e.innerHTML = "Very Bright";
+                                e.innerHTML = "Very Bright(Auto)";
+			else if (info.brightness == "11\n")
+                                e.innerHTML = "Dim(PC)";
+                        else if (info.brightness == "12\n")
+                                e.innerHTML = "Normal(PC)";
+                        else if (info.brightness == "13\n")
+                                e.innerHTML = "Bright(PC)";
+                        else if (info.brightness == "14\n")
+                                e.innerHTML = "Very Bright(PC)";
 			else
 				e.innerHTML = "error";
 		}
@@ -93,7 +99,7 @@
 		<tr><td width="33%"><%:TimeZone%></td><td id="timezone">-</td></tr>
 		<tr><td width="33%"><%:Brightness%></td><td id="brightness">-</td></tr>
 		<tr><td width="33%"><%:Display Format%></td><td id="displayformat">-</td></tr>
-		<tr><td width="33%"><%:Date Time%></td><td id="updateDateTime">-</td></tr>
+		<tr><td width="33%"><%:Update Date Time%></td><td id="updateDateTime">-</td></tr>
 	</table>
 </fieldset>
 
