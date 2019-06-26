@@ -135,7 +135,7 @@ function o.cfgvalue(self, section)
 
     if r1 ~= r2 then
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer1 %s --UnLock", r1)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer1 \"%s\" --UnLock", r1)
         luci.sys.exec(cmd)
     end
 
@@ -155,7 +155,7 @@ function o.write(self, section, value)
     fs.writefile("/SDC/Clock.conf", v)
 
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer1 %s --UnLock", value)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer1 \"%s\" --UnLock", value)
         luci.sys.exec(cmd)
 end
 
@@ -270,7 +270,7 @@ function o.cfgvalue(self, section)
 
     if r1 ~= r2 then
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer2 %s --UnLock", r1)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer2 \"%s\" --UnLock", r1)
         luci.sys.exec(cmd)
     end
 
@@ -290,7 +290,7 @@ function o.write(self, section, value)
     fs.writefile("/SDC/Clock.conf", v)
 
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer2 %s --UnLock", value)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer2 \"%s\" --UnLock", value)
         luci.sys.exec(cmd)
 end
 
@@ -405,7 +405,7 @@ function o.cfgvalue(self, section)
 
     if r1 ~= r2 then
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer3 %s --UnLock", r1)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer3 \"%s\" --UnLock", r1)
         luci.sys.exec(cmd)
     end
 
@@ -425,7 +425,7 @@ function o.write(self, section, value)
     fs.writefile("/SDC/Clock.conf", v)
 
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer3 %s --UnLock", value)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer3 \"%s\" --UnLock", value)
         luci.sys.exec(cmd)
 end
 
@@ -540,7 +540,7 @@ function o.cfgvalue(self, section)
 
     if r1 ~= r2 then
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer4 %s --UnLock", r1)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer4 \"%s\" --UnLock", r1)
         luci.sys.exec(cmd)
     end
 
@@ -560,7 +560,7 @@ function o.write(self, section, value)
     fs.writefile("/SDC/Clock.conf", v)
 
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer4 %s --UnLock", value)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer4 \"%s\" --UnLock", value)
         luci.sys.exec(cmd)
 end
 
@@ -675,7 +675,7 @@ function o.cfgvalue(self, section)
 
     if r1 ~= r2 then
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer5 %s --UnLock", r1)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer5 \"%s\" --UnLock", r1)
         luci.sys.exec(cmd)
     end
 
@@ -695,7 +695,7 @@ function o.write(self, section, value)
     fs.writefile("/SDC/Clock.conf", v)
 
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer5 %s --UnLock", value)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpServer5 \"%s\" --UnLock", value)
         luci.sys.exec(cmd)
 end
 
@@ -716,7 +716,7 @@ function o.cfgvalue(self, section)
 
     if r1 ~= r2 then
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpInterval %s --UnLock", r1)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpInterval \"%s\" --UnLock", r1)
         luci.sys.exec(cmd)
     end
 
@@ -736,7 +736,7 @@ function o.write(self, section, value)
     fs.writefile("/SDC/Clock.conf", v)
 
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpInterval %s --UnLock", value)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpInterval \"%s\" --UnLock", value)
         luci.sys.exec(cmd)
 end
 
@@ -757,7 +757,7 @@ function o.cfgvalue(self, section)
 
     if r1 ~= r2 then
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpTimeout %s --UnLock", r1)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpTimeout \"%s\" --UnLock", r1)
         luci.sys.exec(cmd)
     end
 
@@ -777,7 +777,7 @@ function o.write(self, section, value)
     fs.writefile("/SDC/Clock.conf", v)
 
     local  cmd = ""
-        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpTimeout %s --UnLock", value)
+        cmd = string.format("/SDC/ClockService --Lock --SetstsChClkTimeNtpTimeout \"%s\" --UnLock", value)
         luci.sys.exec(cmd)
 end
 
